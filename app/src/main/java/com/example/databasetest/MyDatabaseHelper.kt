@@ -1,9 +1,8 @@
-package com.example.datapersistencetest
+package com.example.databasetest
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.widget.Toast
 
 class MyDatabaseHelper(val context: Context, name: String, version: Int): SQLiteOpenHelper(context, name, null, version) {
 
@@ -14,7 +13,6 @@ class MyDatabaseHelper(val context: Context, name: String, version: Int): SQLite
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(createBook)
         db?.execSQL(createCategory)
-        Toast.makeText(context, "Create succeeded", Toast.LENGTH_SHORT).show()
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

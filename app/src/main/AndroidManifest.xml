@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DatabaseTest"
         tools:targetApi="31">
+        <provider
+            android:name=".DatabaseProvider"
+            android:authorities="com.example.databasetest.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

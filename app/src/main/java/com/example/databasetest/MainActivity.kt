@@ -6,13 +6,16 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.contentValuesOf
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.databasetest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val p by later {
+        Log.d("TAG", "run codes inside later block")
+        "test later"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +87,11 @@ class MainActivity : AppCompatActivity() {
             } finally {
                 db.endTransaction() // end transaction
             }
+        }
+
+        binding.triggerLaterFun.setOnClickListener {
+            // reference p field in the button click
+            Log.d("BTN CLICK", p)
         }
     }
 }

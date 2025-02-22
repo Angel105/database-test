@@ -14,7 +14,7 @@ class DatabaseProvider : ContentProvider() {
     private val authority = "com.example.databasetest.provider"
     private var dbHelper: MyDatabaseHelper? = null
 
-    private val uriMatcher by lazy {
+    private val uriMatcher by later {
         val matcher = UriMatcher(UriMatcher.NO_MATCH)
         matcher.addURI(authority, "book", bookDir)
         matcher.addURI(authority, "book/#", bookItem)
